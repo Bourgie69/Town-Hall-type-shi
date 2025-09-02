@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calc_icon.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dice.html" class="nav-link">Dice</a>
+        <a href="#" class="nav-link active">Calculator</a>
+        <a href="guess.html" class="nav-link">Guess</a>
+        <a href="stopwatch.html" class="nav-link">Stopwatch</a>
+    </nav>
+
+    <div id="calc">
+        <input id="display" readonly></input>
+        <div id="keys">
+            <button onclick="clearDisplay()" class="functions">AC</button>
+            <button onclick="toggleSign()" class="functions">+/-</button>
+            <button onclick="percent()" class="functions">% </button>
+            <button onclick="appendToDisplay('/')" class="operator">/</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('*')" class="operator">x</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')" class="operator">-</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')" class="operator">+</button>
+
+            <button id="lil_calc">
+                <div id="lil_calc_border">
+                    <div id="lil_calc_display"></div>
+                    <div id="icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                
+            </button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculateResult()" class="operator">=</button>
+        </div>
+        
+    </div>
+
+    <script src="js/utils.js"></script>
+</body>
+</html>

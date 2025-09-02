@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dice.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link active">Dice</a>
+        <a href="calculator.html" class="nav-link">Calculator</a>
+        <a href="guess.html" class="nav-link">Guess</a>
+        <a href="stopwatch.html" class="nav-link">Stopwatch</a>
+    </nav>
+
+    <div class="dice-container">
+        <div class="img-container">
+            <img id="dice-image" src="" alt="Dice" class="dice-image">
+            <img id="dice-image2" src="" alt="Dice" class="dice-image">
+        </div>
+
+        <div class="input-container">
+            <button onclick="delayedRoll()" id="roll-button">Roll Dice</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script src="js/dice.js"></script>
+</body>
+</html>

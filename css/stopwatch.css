@@ -1,0 +1,26 @@
+
+.stopwatch {
+    text-align: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.display {
+    font-size: 3em; 
+    margin-bottom: 20px;
+}
+
+.controls button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#start-btn { background-color: green; }
+#pause-btn { background-color: orange; }
+#reset-btn { background-color: red; }

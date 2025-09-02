@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+body h1{
+    color: white;
+}
+
+.guess-container{
+    text-align: center;
+    background-color: gray;
+    height: 200px;
+    width: 300px;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+#previous{
+    opacity: 0.5;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#guess-input{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#guess-submit{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    cursor: pointer;
+}

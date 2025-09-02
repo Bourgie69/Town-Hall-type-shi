@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    background-color: hsl(0, 0%, 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    margin: 0;
+}
+h1{
+    margin: 0;
+}
+h2{
+    margin: 0;
+}
+h3{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.nav{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0, 0.2);
+    align-items: center;
+}
+.nav a{
+    width: fit-content;
+    padding: 10px;
+    height: fit-content;
+    background-color: gray;
+    border-radius: 25px;
+}
+
+#calc{
+    width: 300px;
+    height: 600px;
+    background-color: hsl(0, 0%, 0%);
+    overflow: hidden;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+#display{
+    width: 100%;
+    height: 100px;
+    font-size: 50px;
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+    text-align: right;
+    border: none;
+    padding-top: 100px;
+}
+
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+#keys button{
+    color: white;
+    font-size: 30px;
+    height: 60px;
+    width: 60px;
+    border-radius: 40px;
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+}
+#keys button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 25%);
+}   
+#keys button:active{
+    background-color: hsl(0, 0%, 50%);
+}
+
+
+.operator{
+    background-color: hsl(35, 100%, 50%) !important;  
+}
+.operator:hover{
+    background-color: hsl(35, 100%, 60%) !important;  
+}
+.operator:active{
+    background-color: hsl(35, 100%, 40%) !important;  
+}
+
+
+.functions{
+    background-color: hsl(0, 0%, 50%) !important;
+}
+.functions:hover{
+    background-color: hsl(0, 0%, 60%) !important;
+}
+.functions:active{
+    background-color: hsl(0, 0%, 40%) !important;
+}

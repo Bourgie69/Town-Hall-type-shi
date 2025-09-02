@@ -1,0 +1,38 @@
+.dice-container{
+    background-color: green;
+    height: 200px;
+    width: 400px;
+    border-radius: 25px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+.img-container img{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+#result{
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
+#roll-button{
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 80px;
+}
+
+#roll-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}

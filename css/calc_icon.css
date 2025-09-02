@@ -1,0 +1,41 @@
+#lil_calc_border{
+    height: 55%;
+    width: 45%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+
+#icon{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 1.5px;
+    align-items: end;
+    margin-bottom: 1px;
+}
+#icon span{
+    background-color: hsl(0, 0%, 20%);
+    height: 4px;
+    width: 4px;
+    border-radius: 5px;
+}
+
+
+#lil_calc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#lil_calc_display{
+    margin-top: 2px;
+    height: 30%;
+    width: 80%;
+    border-radius: 3px;
+    background-color: hsl(0, 0%, 20%);
+}

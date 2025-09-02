@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/guess.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dice.html" class="nav-link active">Dice</a>
+        <a href="calculator.html" class="nav-link">Calculator</a>
+        <a href="#" class="nav-link">Guess</a>
+        <a href="stopwatch.html" class="nav-link">Stopwatch</a>
+    </nav>
+
+    <h1>
+        If you guess right, the number changes
+    </h1>
+
+    <div class="guess-container">
+        <h2 id="hint">Guess between 1-100</h2>
+        <p id="previous">Previous Guess: </p>
+        <div class="input-container">
+            <input onkeydown="if (event.key === 'Enter') { check(this.value); }" id="guess-input" type="number" placeholder="Enter your guess">
+            <button onclick="submit()" id="guess-submit">Submit</button>
+        </div>
+    </div>  
+
+
+    <script src="js/guess.js"></script>
+</body>
+</html>
