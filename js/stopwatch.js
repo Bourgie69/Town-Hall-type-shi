@@ -24,8 +24,9 @@ window.onload = function() {
     const startBtn = document.getElementById('start-btn');
     const pauseBtn = document.getElementById('pause-btn');
     const resetBtn = document.getElementById('reset-btn');
+    const clearBtn = document.getElementById('clearBtn')
+    const laps = document.getElementById('laps');
 
-    // Timer variables
     let interval;
     let startTime = 0;
     let elapsedTime = 0;
@@ -62,16 +63,25 @@ window.onload = function() {
         if (isRunning) return;
 
         isRunning = true;
-        startTime = performance.now() - elapsedTime; // Adjust start time for resuming
+        startTime = performance.now() - elapsedTime; 
         interval = setInterval(() => {
             elapsedTime = performance.now() - startTime;
             updateDisplay();
-        }, 10); // Update every 10 milliseconds for precision
+        }, 10); 
     }
+
+    let previousLapTime = 0; 
 
     function pause() {
         if (!isRunning) return;
 
+        let lapTime = Math.floor(elapsedTime);
+        let lapDiff = (lapTime - previousLapTime) / 1000; //
+        const li = document.createElement('li');
+        li.textContent = `${lapDiff}s`
+        laps.appendChild(li);
+        previousLapTime = lapTime;
+        
         isRunning = false;
         clearInterval(interval);
     }
@@ -79,10 +89,15 @@ window.onload = function() {
     function reset() {
         pause();
         elapsedTime = 0;
+        previousLapTime = 0;
         updateDisplay();
     }
 
-    // Add event listeners for the buttons
+    function clearLaps() {
+        laps.innerHTML = ''
+    }
+
+    clearBtn.addEventListener('click', clearLaps)
     startBtn.addEventListener('click', start);
     pauseBtn.addEventListener('click', pause);
     resetBtn.addEventListener('click', reset);

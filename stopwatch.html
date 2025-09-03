@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stopwatch</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/stopwatch.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stopwatch.css" />
+  </head>
+  <body>
     <nav class="nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="dice.html" class="nav-link active">Dice</a>
-        <a href="calculator.html" class="nav-link">Calculator</a>
-        <a href="guess.html" class="nav-link">Guess</a>
-        <a href="#" class="nav-link">Stopwatch</a>
-    </nav>  
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dice.html" class="nav-link active">Dice</a>
+      <a href="calculator.html" class="nav-link">Calculator</a>
+      <a href="guess.html" class="nav-link">Guess</a>
+      <a href="#" class="nav-link">Stopwatch</a>
+    </nav>
 
-    <div class="stopwatch">
+    <div class="stopwatch-container">
+      <div class="stopwatch">
         <div class="display">
-            <span id="minutes">00</span>:<span id="seconds">00</span>:<span id="milliseconds">000</span>
+          <span id="minutes">00</span>:<span id="seconds">00</span>:<span
+            id="milliseconds"
+            >000</span
+          >
         </div>
         <div class="controls">
-            <button id="start-btn">Start</button>
-            <button id="pause-btn">Pause</button>
-            <button id="reset-btn">Reset</button>
+          <button id="start-btn">Start</button>
+          <button id="pause-btn">Pause</button>
+          <button id="reset-btn">Reset</button>
         </div>
+        <div class="controls controls2">
+          <p>Space to Start/Lap</p>
+          <p>Enter to Pause/Reset</p>
+        </div>
+      </div>
+
+      <div id="laps-container" class="lap-counter">
+        <h3>Lap Counter</h3>
+        <button id="clearBtn">Clear</button>
+        <ul id="laps"></ul>
+      </div>
     </div>
 
-
     <script src="js/stopwatch.js"></script>
-</body>
+  </body>
 </html>
