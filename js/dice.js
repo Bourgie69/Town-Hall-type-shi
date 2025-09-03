@@ -1,10 +1,10 @@
 const dice = [
-    { value: 1, image: "assets/1.png" },
-    { value: 2, image: "assets/2.png" },
-    { value: 3, image: "assets/3.png" },
-    { value: 4, image: "assets/4.png" },
-    { value: 5, image: "assets/5.png" },
-    { value: 6, image: "assets/6.png" }
+    "assets/1.png" ,
+    "assets/2.png" ,
+    "assets/3.png" ,
+    "assets/4.png" ,
+    "assets/5.png" ,
+    "assets/6.png" 
 ];
 
 document.addEventListener('keydown', (event) => {
@@ -17,15 +17,15 @@ document.addEventListener('keydown', (event) => {
 const image = document.getElementById("dice-image");
 const image2 = document.getElementById("dice-image2");
 
-image.src = dice[Math.floor(Math.random() * dice.length)].image;
-image2.src = dice[Math.floor(Math.random() * dice.length)].image;
+image.src = dice[Math.floor(Math.random() * dice.length)];
+image2.src = dice[Math.floor(Math.random() * dice.length)];
 
 function rollDice() {
     let index = Math.floor(Math.random() * dice.length);
-    image.src = dice[index].image;
+    image.src = dice[index];
     let index2 = Math.floor(Math.random() * dice.length);
-    image2.src = dice[index2].image;
-    document.getElementById("result").innerText = 'You rolled: ' + (dice[index].value + dice[index2].value);
+    image2.src = dice[index2];
+    document.getElementById("result").innerText = 'You rolled: ' + (index + index2 + 2);
 }
 
 function delayedRoll() {
@@ -34,13 +34,12 @@ function delayedRoll() {
     result.innerText = '';
 
     const intervalId = setInterval(() => {
-        image.src = dice[Math.floor(Math.random() * dice.length)].image;
-        image2.src = dice[Math.floor(Math.random() * dice.length)].image;
-
-        if(result.innerText !== '') {
-            clearInterval(intervalId);
-    }
+        image.src = dice[Math.floor(Math.random() * dice.length)];
+        image2.src = dice[Math.floor(Math.random() * dice.length)];
 }, 100)
 
-    setTimeout(rollDice, 1000);
-}
+    setTimeout(() => {
+        clearInterval(intervalId);
+        rollDice()
+    }, 1000);
+} 

@@ -1,0 +1,40 @@
+
+.home-container{
+    position: fixed;
+    top: 50px;
+    width: 100vw;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature{
+    height: 200px;
+    background-color: green;
+    transition: transform .2s;
+}
+
+.feature:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+.text-container{
+    margin-left: 5%;
+}
+
+#dice-home{
+    background-color: white;
+}
+
+#calc-home{
+    background-color: orange;
+}
+
+#watch-home{
+    background-color: rgb(118, 28, 28);
+}

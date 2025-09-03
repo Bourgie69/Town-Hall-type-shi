@@ -15,6 +15,7 @@ function check(guess){
     document.getElementById('guess-input').value = '';
     if (guess == randomNumber) {
         hint.textContent = "You guessed right. The number has changed now.";
+        prev.textContent = `Previous Guess: ${guess}`;
         randomNumber = Math.floor(Math.random() * 100) + 1;
     } else if (guess < randomNumber) {
         hint.textContent = "Try a higher number.";

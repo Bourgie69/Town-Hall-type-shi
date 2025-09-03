@@ -21,7 +21,7 @@ h3{
 }
 a{
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
 
@@ -42,6 +42,9 @@ a{
     height: fit-content;
     background-color: gray;
     border-radius: 25px;
+}
+.nav a:hover{
+    background-color: rgb(84, 84, 84);
 }
 
 #calc{

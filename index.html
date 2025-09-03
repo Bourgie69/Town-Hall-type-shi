@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <nav class="nav">
@@ -14,20 +15,45 @@
         <a href="guess.html" class="nav-link">Guess</a>
         <a href="stopwatch.html" class="nav-link">Stopwatch</a>
     </nav>
-
+    
     <div class="home-container">
-        <h1>Welcome.</h1>
         <div class="features">
-            <div class="feature">
-                <h2>Dice Roller</h2>
-                <p>Roll two dice and get a random result</p>
-            </div>
-            <div class="feature">
-            <div class="feature">
-                <h2>Calculator</h2>
-                <p>Basic Calculator</p>
-            </div>
+            <a href="dice.html">
+                <div id="dice-home" class="feature">
+                    <div class="text-container">
+                        <h2>Dice Roll</h2>
+                        <p>Roll two dice and get a random result</p>
+                    </div>
+                </div>
+            </a>
 
+            <a href="calculator.html">
+                <div id="calc-home" class="feature">
+                    <div class="text-container">
+                        <h2>Calculator</h2>
+                        <p>Basic Calculator</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="guess.html">
+                <div id="guess-home" class="feature"> 
+                    <div class="text-container">
+                        <h2>Guessing Game</h2>
+                        <p>Guess a number between 1 and 100</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="stopwatch.html">
+                <div id="watch-home" class="feature">
+                    <div class="text-container">
+                        <h2>Stopwatch</h2>
+                        <p>Just a stopwatch</p>
+                    </div>
+                </div>
+            </a>
+            
         </div>
     </div>
 </body>
