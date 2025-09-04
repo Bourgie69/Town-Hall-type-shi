@@ -94,7 +94,7 @@ window.onload = function() {
             event.preventDefault();
             reset();
             stopReaction();
-            clearLaps()
+            clearLaps();
         }
     });
 
@@ -183,12 +183,19 @@ window.onload = function() {
         document.body.style.backgroundColor = 'hsl(0, 0%, 20%)'
     }
 
-    let randomTime = Math.floor(Math.random() * 5000)
+    let randomTime = Math.floor(Math.random() * 2500) + 2500
+
+
 
     function reactionTime() {
         document.body.style.backgroundColor = 'orange'
-        setTimeout(startReaction, randomTime);
-    }
+        let timeoutId = setTimeout(startReaction, randomTime);
+
+        addEventListener('keydown', (event) =>{
+            if(event.key === 'Enter'){
+                clearTimeout(timeoutId)
+            }
+    })}
 
     clearBtn.addEventListener('click', clearLaps)
     startBtn.addEventListener('click', start);
@@ -198,4 +205,4 @@ window.onload = function() {
         stopReaction()
     });
     reactionBtn.addEventListener('click', reactionTime)
-};
+}
