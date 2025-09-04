@@ -1,13 +1,46 @@
+const guessContainer = document.createElement('div')
+guessContainer.className = 'guess-container'
+document.body.appendChild(guessContainer)
+
+const hinter = document.createElement('h2')
+hinter.id = 'hint'
+hinter.innerText = 'Guess between 1-100'
+guessContainer.appendChild(hinter)
+
+const previousGuess = document.createElement('p')
+previousGuess.id = 'previous'
+previousGuess.innerText = 'Previous Guess: '
+guessContainer.appendChild(previousGuess)
+
+const inContainer = document.createElement('div')
+inContainer.className = 'input-container'
+guessContainer.appendChild(inContainer)
+
+const inputter = document.createElement('input')
+inputter.id = 'guess-input'
+inputter.type = 'number'
+inputter.placeholder = 'Enter your guess'
+
+inputter.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter'){
+        check(inputter.value)
+    }
+})
+
+inContainer.appendChild(inputter)
+
+const submitter = document.createElement('button')
+submitter.id = 'guess-submit'
+submitter.innerText = 'Submit'
+submitter.addEventListener('click', () =>{
+    check(inputter.value)
+})
+
+inContainer.appendChild(submitter)
+
+
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-
-function submit(){
-    const submit = document.getElementById('guess-submit');        
-    const guess = document.getElementById('guess-input').value;
-    submit.addEventListener('click', () => {
-        check(guess);
-    });
-};
 
 function check(guess){
     const hint = document.getElementById('hint');

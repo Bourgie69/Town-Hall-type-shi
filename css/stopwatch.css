@@ -39,6 +39,7 @@
 #start-btn { background-color: green; }
 #pause-btn { background-color: orange; }
 #reset-btn { background-color: red; }
+#reaction-btn{ background-color: black;}
 
 .lap-counter{
     background-color: rgb(252, 252, 252);

@@ -1,4 +1,82 @@
 window.onload = function() {
+    // const watchContainer = document.createElement('div')
+    // watchContainer.className = 'stopwatch-container'
+    // document.body.appendChild(watchContainer)
+
+    // const watch = document.createElement('div')
+    // watch.className = 'stopwatch'
+    // watchContainer.appendChild(watch)
+
+    // const display = document.createElement('div')
+    // display.className = 'display'
+    // watch.appendChild(display)
+
+    // const minutesDis = document.createElement('span')
+    // minutesDis.id = 'minutes'
+    // minutesDis.innerHTML = '00'
+    
+    // const secondsDis = document.createElement('span')
+    // secondsDis.id = 'seconds'
+    // secondsDis.innerHTML = '00'
+
+    // const millisecondsDis = document.createElement('span')
+    // millisecondsDis.id = 'milliseconds'
+    // millisecondsDis.innerHTML = '000'
+
+    // display.appendChild(minutesDis)
+    // display.append(':')
+    // display.appendChild(secondsDis)
+    // display.append(':')
+    // display.appendChild(millisecondsDis)
+
+    // const controls = document.createElement('div')
+    // controls.className = 'controls'
+    // watch.appendChild(controls)
+
+    // for(let i = 0 ; i < 3; i++){
+    //     const button = document.createElement('button')
+    //     button.id = `button${i}` 
+    //     controls.appendChild(button)
+    // }
+
+    // const starter = document.getElementById('button0')
+    // starter.id = 'start-btn'
+    // starter.innerText = 'Start'
+
+    // const pauser = document.getElementById('button1')
+    // pauser.id = 'pause-btn'
+    // pauser.innerText = 'Pause'
+
+    // const resetter = document.getElementById('button2')
+    // resetter.id = 'reset-btn'
+    // resetter.innerText = 'Reset'
+
+    // const controls2 = document.createElement('div')
+    // controls2.classList.add('controls', 'controls2')
+    // watch.appendChild(controls2)
+    
+    // controls2.append('Space to Start/Lap')
+    // controls2.append('Enter to Pause/reset')
+
+    // const lapsContainer = document.createElement('div')
+    // lapsContainer.id = 'laps-container'
+    // lapsContainer.className = 'lap-counter'
+    // watchContainer.appendChild(lapsContainer)
+
+
+    // const lapsTitle = document.createElement('h3')
+    // lapsTitle.innerText = 'Lap Counter'
+    // lapsContainer.appendChild(lapsTitle)
+
+    // const clearer = document.createElement('button')
+    // clearer.id = 'clearBtn'
+    // clearer.innerText = 'Clear'
+    // lapsContainer.appendChild(clearer)
+
+    // const unList = document.createElement('ul')
+    // unList.id = 'laps'
+    // lapsContainer.appendChild(unList)
+
 
     document.addEventListener('keydown', (event) => {
         if(!isRunning){
@@ -15,6 +93,8 @@ window.onload = function() {
         if(event.code === 'Enter'){
             event.preventDefault();
             reset();
+            stopReaction();
+            clearLaps()
         }
     });
 
@@ -25,6 +105,7 @@ window.onload = function() {
     const pauseBtn = document.getElementById('pause-btn');
     const resetBtn = document.getElementById('reset-btn');
     const clearBtn = document.getElementById('clearBtn')
+    const reactionBtn = document.getElementById('reaction-btn')
     const laps = document.getElementById('laps');
 
     let interval;
@@ -36,18 +117,15 @@ window.onload = function() {
         let totalMilliseconds = Math.floor(timeInMilliseconds);
         const totalSeconds = Math.floor(totalMilliseconds / 1000);
         const totalMinutes = Math.floor(totalSeconds / 60);
-        const totalHours = Math.floor(totalMinutes / 60);
 
         const milliseconds = totalMilliseconds % 1000;
         const seconds = totalSeconds % 60;
         const minutes = totalMinutes % 60;
-        const hours = totalHours;
 
         return {
             milliseconds: milliseconds,
             seconds: seconds,
             minutes: minutes,
-            hours: hours
         };
     }
 
@@ -56,7 +134,6 @@ window.onload = function() {
         millisecondsEl.textContent = String(time.milliseconds).padStart(3, '0');
         secondsEl.textContent = String(time.seconds).padStart(2, '0');
         minutesEl.textContent = String(time.minutes).padStart(2, '0');
-        hoursEl.textContent = String(time.hours).padStart(2, '0');
     }
 
     function start() {
@@ -97,8 +174,28 @@ window.onload = function() {
         laps.innerHTML = ''
     }
 
+    function startReaction() {
+        document.body.style.backgroundColor = 'lightgreen'
+        start()
+    }
+
+    function stopReaction() {
+        document.body.style.backgroundColor = 'hsl(0, 0%, 20%)'
+    }
+
+    let randomTime = Math.floor(Math.random() * 5000)
+
+    function reactionTime() {
+        document.body.style.backgroundColor = 'orange'
+        setTimeout(startReaction, randomTime);
+    }
+
     clearBtn.addEventListener('click', clearLaps)
     startBtn.addEventListener('click', start);
     pauseBtn.addEventListener('click', pause);
-    resetBtn.addEventListener('click', reset);
+    resetBtn.addEventListener('click', ()=>{
+        reset();
+        stopReaction()
+    });
+    reactionBtn.addEventListener('click', reactionTime)
 };
